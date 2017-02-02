@@ -11,12 +11,14 @@ function createTestCar()
     //здесь создаем тестовую машинку, без необходимости скачивания картинки
 
     //как именно создаем завист от внутреностей visitor.getMyCar() и visitor.goToBar()
+
+    //Другим вариантом можно было бы подменить ImageDownloader, чтобы он всегда
+    //возвращал какую-то конретную картинку без необходимости скачивания
 }
 
 suite('when barmen pours whisky', function () {
     let barmen = new Barmen();
     let me = new Visitor();
-    let imageDownloader = new ImageDownloader();
 
     setup(function (done) {
         me.sober();
