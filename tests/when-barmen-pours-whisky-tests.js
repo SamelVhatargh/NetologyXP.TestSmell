@@ -6,23 +6,25 @@ var ImageDownloader = require('../src/image-downloader');
 var fs = require('fs');
 var username = require('username');
 
+function createTestCar()
+{
+    //здесь создаем тестовую машинку, без необходимости скачивания картинки
+
+    //как именно создаем завист от внутреностей visitor.getMyCar() и visitor.goToBar()
+}
+
 suite('when barmen pours whisky', function () {
     let barmen = new Barmen();
     let me = new Visitor();
     let imageDownloader = new ImageDownloader();
 
     setup(function (done) {
-        this.timeout(20000);
         me.sober();
+        var car = createTestCar();
+        me.goToBar(car);
+        barmen.free();
 
-        imageDownloader.download('http://www.rosa-obs.com/images/ccd/M31_karel_full.jpg',
-            'mycar.jpg', function () {
-                var car = me.getMyCar("mycar.jpg");
-                me.goToBar(car);
-                barmen.free();
-
-                done();
-            });
+        done();
     });
 
     suite('i ask 50 grams', function () {
