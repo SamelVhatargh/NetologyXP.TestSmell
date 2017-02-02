@@ -40,7 +40,7 @@ suite('when barmen pours whisky', function () {
         done();
     });
 
-    suite('i ask 50 grams of whisky', function () {
+    suite('I ask 50 grams of whisky', function () {
         test('I get 50 grams of whisky', function (done) {
             let iAskVolume = 50;
 
@@ -52,7 +52,7 @@ suite('when barmen pours whisky', function () {
         });
     });
 
-    suite('i drink 50 grams of whisky', function () {
+    suite('I drink 50 grams of whisky', function () {
         test('I did not get drunk', function (done) {
             let drinkVolume = 50;
 
@@ -64,7 +64,7 @@ suite('when barmen pours whisky', function () {
         });
     });
 
-    suite('i ask -10 grams', function () {
+    suite('I ask -10 grams', function () {
         test('Barmen rejects with reason: Invalid volume of whisky', function (done) {
             let iAskVolume = -10;
 
@@ -74,7 +74,7 @@ suite('when barmen pours whisky', function () {
         });
     });
 
-    suite('i ask 500 grams', function () {
+    suite('I ask 500 grams', function () {
         test('Barmen said there is no such glass', function (done) {
 
             username().then(un => {
