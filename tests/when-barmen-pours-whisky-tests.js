@@ -40,6 +40,18 @@ suite('when barmen pours whisky', function () {
         done();
     });
 
+    suite('i ask 50 grams of whisky', function () {
+        test('I get 50 grams of whisky', function (done) {
+            let iAskVolume = 50;
+
+            let volumeInGlass = barmen.pour(whisky, iAskVolume);
+
+            assert.equal(iAskVolume, volumeInGlass);
+
+            done();
+        });
+    });
+
     suite('i ask 50 grams', function () {
         test('I get and drink whisky', function (done) {
             let iAskVolume = 50;
