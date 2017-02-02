@@ -64,21 +64,6 @@ suite('when barmen pours whisky', function () {
         });
     });
 
-    suite('i ask 50 grams', function () {
-        test('I get and drink whisky', function (done) {
-            let iAskVolume = 50;
-
-            let volumeInGlass = barmen.pour(whisky, iAskVolume);
-            me.drink(volumeInGlass);
-
-            assert.equal(iAskVolume, volumeInGlass);
-            assert.equal(false, me.isDrunk());
-            assert.equal(50, me.getTotallyDrunk());
-
-            done();
-        });
-    });
-
     suite('i ask -10 grams', function () {
         test('I get an error', function (done) {
             let iAskVolume = -10;
