@@ -65,7 +65,7 @@ suite('when barmen pours whisky', function () {
     });
 
     suite('i ask -10 grams', function () {
-        test('I get an error', function (done) {
+        test('Barmen rejects with reason: Invalid volume of whisky', function (done) {
             let iAskVolume = -10;
 
             expect(() => barmen.pour(whisky, iAskVolume)).to.throw(/Invalid volume of whisky/);
