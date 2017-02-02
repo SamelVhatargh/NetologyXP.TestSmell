@@ -1,10 +1,10 @@
-var assert = require('assert');
-var expect = require('chai').expect;
-var Barmen = require('../src/barmen');
-var Visitor = require('../src/visitor');
-var ImageDownloader = require('../src/image-downloader');
-var fs = require('fs');
-var username = require('username');
+let assert = require('assert');
+let expect = require('chai').expect;
+let Barmen = require('../src/barmen');
+let Visitor = require('../src/visitor');
+let ImageDownloader = require('../src/image-downloader');
+let fs = require('fs');
+let username = require('username');
 
 function createTestCar()
 {
@@ -20,7 +20,7 @@ suite('when barmen pours whisky', function () {
 
     setup(function (done) {
         me.sober();
-        var car = createTestCar();
+        let car = createTestCar();
         me.goToBar(car);
         barmen.free();
 
@@ -34,9 +34,9 @@ suite('when barmen pours whisky', function () {
                     done(err);
                 }
 
-                var iAskVolume = 50;
+                let iAskVolume = 50;
 
-                var volumeInGlass = barmen.pour(whisky, iAskVolume);
+                let volumeInGlass = barmen.pour(whisky, iAskVolume);
                 me.drink(volumeInGlass);
 
                 assert.equal(iAskVolume, volumeInGlass);
@@ -55,7 +55,7 @@ suite('when barmen pours whisky', function () {
                     done(err);
                 }
 
-                var iAskVolume = -10;
+                let iAskVolume = -10;
 
                 expect(() => barmen.pour(whisky, iAskVolume)).to.throw(/Invalid volume of whisky/);
                 done();
@@ -70,8 +70,8 @@ suite('when barmen pours whisky', function () {
                 console.log(un);
 
                 if (un === "dpavlov") {
-                    var iAskVolume = 500;
-                    var whisky = 1;
+                    let iAskVolume = 500;
+                    let whisky = 1;
 
                     expect(() => barmen.pour(whisky, iAskVolume)).to.throw(/There is no such glass/);
                     done();
