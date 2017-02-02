@@ -68,6 +68,9 @@ suite('when barmen pours whisky', function () {
         test('Barmen rejects with reason: Invalid volume of whisky', function (done) {
             let iAskVolume = -10;
 
+            //Вроде бы говорили о том что Act и Assert должны быть на разных строчках - здесь не так
+            //Но здесь тестируется исключение, и возможно в js просто нельзя сделать по другому
+            //Не уверен
             expect(() => barmen.pour(whisky, iAskVolume)).to.throw(/Invalid volume of whisky/);
 
             done();
