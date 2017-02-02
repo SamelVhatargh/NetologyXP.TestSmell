@@ -52,6 +52,18 @@ suite('when barmen pours whisky', function () {
         });
     });
 
+    suite('i drink 50 grams of whisky', function () {
+        test('I did not get drunk', function (done) {
+            let drinkVolume = 50;
+
+            me.drink(drinkVolume);
+
+            assert.equal(false, me.isDrunk());
+
+            done();
+        });
+    });
+
     suite('i ask 50 grams', function () {
         test('I get and drink whisky', function (done) {
             let iAskVolume = 50;
